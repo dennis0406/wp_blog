@@ -1,0 +1,16 @@
+:root{
+  --bg-primary: #e8e8e8;
+  --bg-secondary: #222;
+  --cl-text-primary: #000000;
+  --cl-text-secondary: #e6e6e6;
+  --fz-text: calc(10px + 0.5vw);
+  // @include respond(phone){
+  // };
+  // @include respond(tab-port){
+  // };
+  // @include respond(tab-land){
+  // };
+  // @include respond(big-desktop){
+  // };
+}
+

@@ -1,0 +1,85 @@
+version: '3'
+ 
+services:
+  # Database
+  db:
+    image: mysql
+    container_name: another-db-shop
+    #restart: unless-stopped
+    #env_file:
+    #  - ./app/.env
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: shop
+      MYSQL_ROOT_PASSWORD: wordpress_shop_root
+      MYSQL_USER: wordpress_shop
+      MYSQL_PASSWORD: wordpress_shop
+    command: '--default-authentication-plugin=mysql_native_password'
+    networks:
+      - app-network
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    container_name: another-wp-shop
+    image: wordpress
+    #restart: unless-stopped
+    #env_file:
+    #  - ./app/.env
+    ports:
+      - '1670:80'
+    volumes: [ './:/var/www/html' ]
+    # volumes:
+    #   - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    #   - ./wp-content/themes:/var/www/html/wp-content/themes
+    #   - ./wp-content/uploads:/var/www/html/wp-content/uploads
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress_shop
+      WORDPRESS_DB_PASSWORD: wordpress_shop
+      WORDPRESS_DB_NAME: shop
+    networks:
+      - app-network
+  # Webserver
+  webserver:
+    depends_on:
+      - wordpress
+    image: nginx:1.15.12-alpine
+    container_name: another-webserver-shop
+    # restart: unless-stopped
+    ports:
+      - "1671:80"
+    volumes:
+      - wordpress:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+    networks:
+      - app-network
+  # Phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin
+    container_name: another-phpmyadmin-shop
+    ports:
+      - '1672:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: 123123
+      UPLOAD_LIMIT: 300000000
+    networks:
+      - app-network
+  # Php
+  php:
+    image: php:7.4-fpm
+    container_name: another-php-shop
+    volumes:
+      - ./fitter:/var/www/html
+
+volumes:
+  wordpress:
+  dbdata:
+
+networks:
+  app-network:
+    driver: bridge
