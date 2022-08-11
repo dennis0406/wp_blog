@@ -1,17 +1,16 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
-<div id="site-content">
-    <div class="post">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<div class="entry">
-				<?php the_content(); ?>
-			</div>
-		</div>
-	<?php endwhile; endif; ?>
-    </div>
-</div>
-
-<?php get_sidebar(); ?>
+<section id="main-content">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php get_template_part('content', get_post_format()); ?>
+		<?php endwhile; ?>
+		<?php display_pagination(); ?>
+	<?php else : ?>
+		<?php get_template_part('content', 'none'); ?>
+	<?php endif; ?>
+</section>
+<section id="sidebar-content">
+	<?php get_sidebar(); ?>
+</section>
 
 <?php get_footer(); ?>

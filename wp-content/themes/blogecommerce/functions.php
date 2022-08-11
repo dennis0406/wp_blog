@@ -24,16 +24,16 @@ function create_custom_post_type() {
 		'hierarchical' =>false, //khong cho phep phan cap
 		'public' => true,
 		'show_ui' => true,
-		'show_in_menu' => true, //Hiển thị trên Admin Menu (tay trái)
-		'show_in_nav_menus' => true, //Hiển thị trong Appearance -> Menus
-		'show_in_admin_bar' => true, //Hiển thị trên thanh Admin bar màu đen.
-		'menu_position' => 5, //Thứ tự vị trí hiển thị trong menu (tay trái)
-		'menu_icon' => 'wp-content/themes/twentytwentytwo/assets/images/icon-product.png', //Đường dẫn tới icon sẽ hiển thị
-		'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-		'has_archive' => true, //Cho phép lưu trữ (month, date, year)
-		'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
-		'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
-		'capability_type' => 'post' //
+		'show_in_menu' => true, 
+		'show_in_nav_menus' => true, 
+		'show_in_admin_bar' => true, 
+		'menu_position' => 5, 
+		'menu_icon' => 'wp-content/themes/twentytwentytwo/assets/images/icon-product.png', 
+		'can_export' => true, 
+		'has_archive' => true, 
+		'exclude_from_search' => false, 
+		'publicly_queryable' => true,
+		'capability_type' => 'post' 
 	);
 
 	register_post_type('product', $args);
@@ -62,28 +62,180 @@ function get_custom_post_type($query) {
   				'gallery'
   			)
   		 );
-  		// $default_background = array(
-  		// 	'default-color' => '#e8e8e8',
-  		// );
-  		// add_theme_support( 'custom-background', $default_background );
-      //          /*
-      //            * Tạo menu cho theme
-      //            */
-      //            register_nav_menu ( 'primary-menu', __('Primary Menu', 'thachpham') );
-      //          /*
-      //            * Tạo sidebar cho theme
-      //            */
-      //            $sidebar = array(
-      //               'name' => __('Main Sidebar', 'thachpham'),
-      //               'id' => 'main-sidebar',
-      //               'description' => 'Main sidebar for Thachpham theme',
-      //               'class' => 'main-sidebar',
-      //               'before_title' => '<h3 class="widgettitle">',
-      //               'after_sidebar' => '</h3>'
-      //            );
-      //            register_sidebar( $sidebar );
+  		$default_background = array(
+  			'default-color' => '#e8e8e8',
+  		);
+  		add_theme_support( 'custom-background', $default_background );
+                 register_nav_menu ( 'primary-menu', __('Primary Menu', 'dennis') );
+									// sidebar
+								 $sidebar = array(
+                    'name' => __('Main Sidebar', 'dennis'),
+                    'id' => 'main-sidebar',
+                    'description' => 'Main sidebar for dennis theme',
+                    'class' => 'main-sidebar',
+                    'before_title' => '<h3 class="widgettitle">',
+                    'after_sidebar' => '</h3>'
+                 );
+                 register_sidebar( $sidebar );
   	}
   	add_action ( 'init', 'base_setup_theme' );
  }
+
+// Function to display logo
+if ( ! function_exists( 'display_logo' ) ) {
+  function display_logo() {?>
+    <div class="logo">
+     <div class="site-name">
+        <?php if ( is_home() ) {
+          printf(
+            '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
+            get_bloginfo( 'url' ),
+            get_bloginfo( 'description' ),
+            get_bloginfo( 'sitename' )
+          );
+        } else {
+          printf(
+            '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
+            get_bloginfo( 'url' ),
+            get_bloginfo( 'description' ),
+            get_bloginfo( 'sitename' )
+          );
+        } ?>
+      </div>
+      <div class="site-description"><?php bloginfo( 'description' ); ?></div>
+   </div>
+  <?php }
+}
+
+
+  // Function to display menu
+  if ( ! function_exists( 'display_menu' ) ) {
+    function display_menu( $slug ) {
+      $menu = array(
+        'theme_location' => $slug,
+        'container' => 'nav',
+        'container_class' => $slug,
+      );
+      wp_nav_menu( $menu );
+    }
+  }
+
+// Function for pagination
+if ( ! function_exists( 'display_pagination' ) ) {
+	function display_pagination() {
+		// Not show if the number of page less than two
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return '';
+		}
+	?>
+
+ <nav class="pagination" role="navigation">
+		<?php if ( get_next_post_link() ) : ?>
+			<div class="prev"><?php next_posts_link( __('Older Posts', 'dennis') ); ?></div>
+		<?php endif; ?>
+	 <?php if ( get_previous_post_link() ) : ?>
+			<div class="next"><?php previous_posts_link( __('Newer Posts', 'dennis') ); ?></div>
+		<?php endif; ?>
+ </nav><?php
+	}
+}
+
+// Function display thumbnail
+if ( ! function_exists( 'display_thumbnail' ) ) {
+	function display_thumbnail( $size ) {
+		//Just display thumbnail with post have not password
+		if ( ! is_single() &&  has_post_thumbnail()  && ! post_password_required() || has_post_format( 'image' ) ) : ?>
+			<figure class="post-thumbnail"><?php the_post_thumbnail( $size ); ?></figure><?php
+		endif;
+	}
+}
+
+//Function display entry header
+if ( ! function_exists( 'display_entry_header' ) ) {
+	function display_entry_header() {
+		if ( is_single() ) : ?>
+			<h1 class="entry-title">
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+					<?php the_title(); ?>
+				</a>
+			</h1>
+		<?php else : ?>
+			<h2 class="entry-title">
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+					<?php the_title(); ?>
+				</a>
+			</h2><?php
+		endif;
+	}
+}
+
+// Function display information of the post
+if( ! function_exists( 'display_entry_meta' ) ) {
+	function display_entry_meta() {
+		if ( ! is_page() ) :
+			echo '<div class="entry-meta">';
+				printf( __('<span class="author">Posted by %1$s</span>', 'dennis'),
+					get_the_author() );
+
+					printf( __('<span class="date-published"> at %1$s</span>', 'dennis'),
+					get_the_date() );
+
+			 printf( __('<span class="category"> in %1$s</span>', 'dennis'),
+					get_the_category_list( ', ' ) );
+
+				if ( comments_open() ) :
+					echo ' <span class="meta-reply">';
+						comments_popup_link(
+							__('Leave a comment', 'dennis'),
+							__('One comment', 'dennis'),
+							__('% comments', 'dennis'),
+							__('Read all comments', 'dennis')
+						 );
+					echo '</span>';
+				endif;
+			echo '</div>';
+		endif;
+	}
+}
+
+// Function to display read more button
+function display_readmore() {
+	return '…<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'dennis') . '</a>';
+}
+add_filter( 'excerpt_more', 'dennis_readmore' );
+
+// Function to display quick content of the post
+if ( ! function_exists( 'display_entry_content' ) ) {
+	function display_entry_content() {
+
+
+	 if ( ! is_single() ) :
+			the_excerpt();
+		else :
+			the_content();
+
+
+		 // Paginate in post type
+			$link_pages = array(
+				'before' => __('<p>Page:', 'dennis'),
+				'after' => '</p>',
+				'nextpagelink'     => __( 'Next page', 'dennis' ),
+				'previouspagelink' => __( 'Previous page', 'dennis' )
+			);
+			wp_link_pages( $link_pages );
+		endif;
+ }
+}
+
+// Function display tag if in the single page
+if ( ! function_exists( 'display_entry_tag' ) ) {
+	function display_entry_tag() {
+		if ( has_tag() ) :
+			echo '<div class="entry-tag">';
+			printf( __('Tagged in %1$s', 'thachpham'), get_the_tag_list( '', ', ' ) );
+			echo '</div>';
+		endif;
+	}
+}
 
 ?>

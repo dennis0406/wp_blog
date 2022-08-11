@@ -8,10 +8,30 @@ body{
   background-color: var(--bg-primary);
   color: var(--cl-text-primary);
   font-size: var(--fz-text);
-  transition: background 1s;
 }
 
 .dark-mode {
+  transition: background 1s ease;
   background-color: var(--bg-secondary);
   color: var(--cl-text-secondary);
+  animation: opacityOn 5s normal forwards;
+  animation-delay: 2s;
+}
+
+@keyframes opacityOn {
+  0% {
+      opacity: 1;
+  }
+  25% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
