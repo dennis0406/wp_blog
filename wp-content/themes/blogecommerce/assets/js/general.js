@@ -5,3 +5,15 @@ function dark_mode() {
       element[i].classList.toggle("dark-mode");
   }
 }
+
+var btn = document.getElementById("btn_menu");
+var modal_menu = document.getElementsByClassName("header__menu")[0];
+btn.onclick = function(){
+  modal_menu.style.display = "block"
+}
+
+window.onclick = function(event) {
+  if (event.target == modal_menu) {
+    modal_menu.style.display = "none";
+  }
+}

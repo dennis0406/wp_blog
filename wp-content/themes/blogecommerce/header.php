@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/styles/app.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-    <div id="container">
-        <header id="header-content">
-            <?php display_logo();
-            display_menu('primary-menu') ?>
+<body class="switch__dark-mode" <?php body_class(); ?>>
+    <div class="container">
+        <header class="header">
+            <ion-icon onclick="display_menu()" id="btn_menu" class="header__icon--left header__icon" name="menu-outline"></ion-icon>
+            <?php display_menu('primary-menu') ?>
+            <?php display_logo();?>
+            <div class="header__icon--right header__icon">
+                <ion-icon name="search-outline"></ion-icon>
+                <ion-icon onclick="dark_mode()" name="contrast-outline"></ion-icon>
+            </div>
         </header>
         <?php wp_body_open();?>
+        
     

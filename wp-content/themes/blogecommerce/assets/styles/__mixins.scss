@@ -4,18 +4,13 @@
         @content
       };
   }
-  @if $breakpoint == tab-port{
-      @media (max-width: 900px) and (min-width:501px){
-        @content
-      };
-  }
   @if $breakpoint == tab-land{
-      @media (max-width: 1200px) and (min-width:901px){
+      @media (max-width: 1020px) and (min-width:501px){
         @content
       };
   }
-  @if $breakpoint == big-desktop{
-      @media (min-width: 1800px){
+  @if $breakpoint == desktop{
+      @media (min-width:1021px){
         @content
       };
   }

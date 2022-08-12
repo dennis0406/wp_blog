@@ -1,16 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap'); // font for logo
 :root{
   --bg-primary: #e8e8e8;
   --bg-secondary: #222;
   --cl-text-primary: #000000;
   --cl-text-secondary: #e6e6e6;
-  --fz-text: calc(10px + 0.5vw);
-  // @include respond(phone){
-  // };
-  // @include respond(tab-port){
-  // };
+  --w-container: 95%;
+  --px-container: 0;
+  
+  @include respond(tab-land){
+  }
+  @include respond(desktop){
+    --w-container: 90%;
+  }
+  // Header
+  --ff-logo: 'Rubik Burned', cursive;
+  --pt-header: 0;
+  --dp-menu: none;
+  --ps-logo: relative;
+  --left-logo: 0;
+  --trl-logo:0;
+  --vsb-icon-left: visible;
+  --ps-menu: fixed;
+  --fl-dr-menu: column;
+  --w-menu: 100%;
+  --h-menu: 100%;
+  --pt-menu: 100px;
+  --bg-menu: rgba(0,0,0,0.4);
+  --bg-ulmenu: #fefefe;
+  --w-ulmenu: fit-content;
+  @include respond(desktop){
+    --dp-menu: block;
+    --ps-logo: absolute;
+    --pt-header: 80px;
+    --left-logo: 50%;
+    --trl-logo: -50%;
+    --vsb-icon-left: hidden;
+    --ps-menu: relative;
+    --fl-dr-menu: row;
+    --w-menu: auto;
+    --h-menu: auto;
+    --pt-menu: 0;
+    --bg-menu: transparent;
+    --bg-ulmenu: transparent;
+    --w-ulmenu: 60vw;
+  };
   // @include respond(tab-land){
   // };
   // @include respond(big-desktop){
   // };
 }
-

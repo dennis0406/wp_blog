@@ -84,25 +84,16 @@ function get_custom_post_type($query) {
 // Function to display logo
 if ( ! function_exists( 'display_logo' ) ) {
   function display_logo() {?>
-    <div class="logo">
-     <div class="site-name">
-        <?php if ( is_home() ) {
-          printf(
+    <div class="header__logo">
+     <div class="header__logo--site-name">
+        <?php printf(
             '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
             get_bloginfo( 'url' ),
             get_bloginfo( 'description' ),
             get_bloginfo( 'sitename' )
-          );
-        } else {
-          printf(
-            '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
-            get_bloginfo( 'url' ),
-            get_bloginfo( 'description' ),
-            get_bloginfo( 'sitename' )
-          );
-        } ?>
+          ); ?>
       </div>
-      <div class="site-description"><?php bloginfo( 'description' ); ?></div>
+     
    </div>
   <?php }
 }
@@ -115,6 +106,7 @@ if ( ! function_exists( 'display_logo' ) ) {
         'theme_location' => $slug,
         'container' => 'nav',
         'container_class' => $slug,
+				'menu_class'=>'header__menu'
       );
       wp_nav_menu( $menu );
     }
@@ -131,10 +123,10 @@ if ( ! function_exists( 'display_pagination' ) ) {
 
  <nav class="pagination" role="navigation">
 		<?php if ( get_next_post_link() ) : ?>
-			<div class="prev"><?php next_posts_link( __('Older Posts', 'dennis') ); ?></div>
+			<div class="prev"><?php previous_posts_link( __('Newer Posts', 'dennis') ); ?></div>
 		<?php endif; ?>
 	 <?php if ( get_previous_post_link() ) : ?>
-			<div class="next"><?php previous_posts_link( __('Newer Posts', 'dennis') ); ?></div>
+			<div class="next"><?php next_posts_link( __('Older Posts', 'dennis') ); ?></div>
 		<?php endif; ?>
  </nav><?php
 	}
@@ -143,7 +135,7 @@ if ( ! function_exists( 'display_pagination' ) ) {
 // Function display thumbnail
 if ( ! function_exists( 'display_thumbnail' ) ) {
 	function display_thumbnail( $size ) {
-		//Just display thumbnail with post have not password
+		//Just display thumbnail with post that have not password
 		if ( ! is_single() &&  has_post_thumbnail()  && ! post_password_required() || has_post_format( 'image' ) ) : ?>
 			<figure class="post-thumbnail"><?php the_post_thumbnail( $size ); ?></figure><?php
 		endif;
@@ -232,7 +224,7 @@ if ( ! function_exists( 'display_entry_tag' ) ) {
 	function display_entry_tag() {
 		if ( has_tag() ) :
 			echo '<div class="entry-tag">';
-			printf( __('Tagged in %1$s', 'thachpham'), get_the_tag_list( '', ', ' ) );
+			printf( __('Tagged in %1$s', 'dennis'), get_the_tag_list( '', ', ' ) );
 			echo '</div>';
 		endif;
 	}
