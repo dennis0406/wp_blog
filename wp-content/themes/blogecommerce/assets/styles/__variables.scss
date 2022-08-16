@@ -6,19 +6,21 @@
   --cl-text-secondary: #e6e6e6;
   --w-container: 95%;
   --px-container: 0;
-  
+  --p-btn: 5px 8px;
   @include respond(tab-land){
+    --p-btn: 8px 10px
   }
   @include respond(desktop){
-    --w-container: 90%;
+    --w-container: 95%;
+    --p-btn: 8px 14px;
   }
   // Header
   --ff-logo: 'Rubik Burned', cursive;
-  --pt-header: 0;
+  --pt-header: 20px;
   --dp-menu: none;
   --ps-logo: relative;
   --left-logo: 0;
-  --trl-logo:0;
+  --trlY-logo: 0;
   --vsb-icon-left: visible;
   --ps-menu: fixed;
   --fl-dr-menu: column;
@@ -28,12 +30,14 @@
   --bg-menu: rgba(0,0,0,0.4);
   --bg-ulmenu: #fefefe;
   --w-ulmenu: fit-content;
+  --dp-icon-bag: none;
+  --trl-ulmenu: -100%;
   @include respond(desktop){
     --dp-menu: block;
     --ps-logo: absolute;
-    --pt-header: 80px;
+    --pt-header: 40px;
     --left-logo: 50%;
-    --trl-logo: -50%;
+    --trlY-logo: -50%;
     --vsb-icon-left: hidden;
     --ps-menu: relative;
     --fl-dr-menu: row;
@@ -43,9 +47,50 @@
     --bg-menu: transparent;
     --bg-ulmenu: transparent;
     --w-ulmenu: 60vw;
+    --dp-icon-bag: block;
+    --trl-ulmenu: 0;
   };
-  // @include respond(tab-land){
-  // };
-  // @include respond(big-desktop){
-  // };
+  
+  //Banner
+  --line-height-banner: 0.8;
+  @include respond(desktop){
+    --line-height-banner: 1.3;
+  }
+  @include respond(tab-land){
+    --line-height-banner: 1;
+  }
+
+  // newest Post
+  --flex-d-post: column;
+  --m-t-post: 30px;
+  --opct-img-post: .9;
+  --p-content-post: 0 15px;
+  --h-item-post: 45vw;
+  --p-meta-post: 10px;
+  --fz-title-post: calc(15px + 1.3vw);
+  --fz-meta-post: 10px;
+  --cl-content-post: #e6e6e6;
+  --bg-item-post: #e6e6e63e;
+  @include respond(tab-land){
+    --flex-d-post: row;
+    --m-t-post: 50px;
+    --p-content-post: 0 25px;
+    --h-item-post: 30vw;
+    --p-meta-post: 10px;
+    --fz-title-post: calc(13px + 1.3vw);
+    --fz-meta-post: 10px;
+    --opct-img-post: 0;
+    --cl-content-post: inherit;
+  }
+  @include respond(desktop){
+    --flex-d-post: row;
+    --m-t-post: 65px;
+    --p-content-post: 0 35px;
+    --h-item-post: 25vw;
+    --p-meta-post: 15px;
+    --fz-title-post: calc(15px + 1.3vw);
+    --fz-meta-post: 15px;
+    --opct-img-post: 0;
+    --cl-content-post: inherit;
+  }
 }

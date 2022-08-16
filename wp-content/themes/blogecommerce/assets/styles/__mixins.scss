@@ -1,11 +1,11 @@
 @mixin  respond($breakpoint) {
   @if $breakpoint == phone{
-      @media (max-width: 500px){
+      @media (max-width: 550px){
         @content
       };
   }
   @if $breakpoint == tab-land{
-      @media (max-width: 1020px) and (min-width:501px){
+      @media (max-width: 1020px) and (min-width:551px){
         @content
       };
   }

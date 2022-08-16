@@ -1,5 +1,5 @@
 <footer>
-    <div class="container switch__dark-mode">
+    <div class="container">
         <p>
             Design by <a href="#" target="blank">Dennis
                 © <?php echo date('Y'); ?>

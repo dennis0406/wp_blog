@@ -9,12 +9,12 @@ body{
   color: var(--cl-text-primary);
   font-size: calc(8px + 0.5vw);
 }
-
 .container{
   width: var(--w-container);
   padding: 0 var(--px-container);
   margin: 0 auto;
   position: relative;
+  transition: all 1s ease;
 }
 @media screen and (max-width: 600px){
 #wpadminbar {
@@ -22,7 +22,17 @@ body{
 }
 }
 .dark-mode {
-  transition: background 1s ease;
-  background-color: var(--bg-secondary);
-  color: var(--cl-text-secondary);
+  transition: background .5s ease;
+  background-color: var(--bg-secondary) !important;
+  color: var(--cl-text-secondary) !important;
+}
+
+.btn{
+  background-color: var(--bg-primary);
+  color: var(--cl-text-primary);
+  padding: var(--p-btn);
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }

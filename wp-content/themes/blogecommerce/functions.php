@@ -101,11 +101,11 @@ if ( ! function_exists( 'display_logo' ) ) {
 
   // Function to display menu
   if ( ! function_exists( 'display_menu' ) ) {
-    function display_menu( $slug ) {
+    function display_menu( $slug, $container_class ) {
       $menu = array(
         'theme_location' => $slug,
         'container' => 'nav',
-        'container_class' => $slug,
+        'container_class' => $container_class,
 				'menu_class'=>'header__menu'
       );
       wp_nav_menu( $menu );
@@ -190,22 +190,13 @@ if( ! function_exists( 'display_entry_meta' ) ) {
 	}
 }
 
-// Function to display read more button
-function display_readmore() {
-	return '…<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'dennis') . '</a>';
-}
-add_filter( 'excerpt_more', 'dennis_readmore' );
-
 // Function to display quick content of the post
 if ( ! function_exists( 'display_entry_content' ) ) {
 	function display_entry_content() {
-
-
 	 if ( ! is_single() ) :
 			the_excerpt();
 		else :
 			the_content();
-
 
 		 // Paginate in post type
 			$link_pages = array(
