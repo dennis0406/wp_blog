@@ -28,7 +28,7 @@ function create_custom_post_type() {
 		'show_in_nav_menus' => true, 
 		'show_in_admin_bar' => true, 
 		'menu_position' => 5, 
-		'menu_icon' => 'wp-content/themes/twentytwentytwo/assets/images/icon-product.png', 
+		// 'menu_icon' => '/wp-content/themes/blogecommerce/assets/images/icon-product.jpg', 
 		'can_export' => true, 
 		'has_archive' => true, 
 		'exclude_from_search' => false, 
@@ -70,8 +70,7 @@ function get_custom_post_type($query) {
 									// sidebar
 								 $sidebar = array(
                     'name' => __('Main Sidebar', 'dennis'),
-                    'id' => 'main-sidebar',
-                    'description' => 'Main sidebar for dennis theme',
+                    'id' => 'main-sidebar',                   
                     'class' => 'main-sidebar',
                     'before_title' => '<h3 class="widgettitle">',
                     'after_sidebar' => '</h3>'
@@ -181,7 +180,7 @@ if( ! function_exists( 'display_entry_meta' ) ) {
 							__('Leave a comment', 'dennis'),
 							__('One comment', 'dennis'),
 							__('% comments', 'dennis'),
-							__('Read all comments', 'dennis')
+							__('post__comment', 'dennis')
 						 );
 					echo '</span>';
 				endif;

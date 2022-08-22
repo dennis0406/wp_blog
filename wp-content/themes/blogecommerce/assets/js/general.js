@@ -24,7 +24,7 @@ function dark_mode() {
 var btn = document.getElementById("btn_menu");
 var modal_menu = document.getElementsByClassName("header__menu")[0];
 var ulmenu = modal_menu.getElementsByTagName("ul")[0];
-ulmenu.classList.add("switch__dark-mode");
+// ulmenu.classList.add("dark-mode");
 btn.onclick = function () {
   modal_menu.style.display = "block";
   ulmenu.classList.add("move_right");

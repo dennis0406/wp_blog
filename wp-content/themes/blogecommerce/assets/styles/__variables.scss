@@ -27,11 +27,13 @@
   --w-menu: 100%;
   --h-menu: 100%;
   --pt-menu: 100px;
-  --bg-menu: rgba(0,0,0,0.4);
+  --bg-menu: rgba(0, 0, 0, 0.563);
   --bg-ulmenu: #fefefe;
   --w-ulmenu: fit-content;
   --dp-icon-bag: none;
   --trl-ulmenu: -100%;
+  --w-ul: 50vw;
+  --ps-ul: absolute;
   @include respond(desktop){
     --dp-menu: block;
     --ps-logo: absolute;
@@ -49,6 +51,8 @@
     --w-ulmenu: 60vw;
     --dp-icon-bag: block;
     --trl-ulmenu: 0;
+    --w-ul: 100%;
+    --ps-ul: relative;
   };
   
   //Banner

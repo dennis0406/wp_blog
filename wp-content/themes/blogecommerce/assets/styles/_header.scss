@@ -1,82 +1,113 @@
-.header{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--pt-header) 0;
-  position: relative;
-  &__icon{
-    font-size: calc(15px + 0.5vw);
-    cursor: pointer;
-    &--right{
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      flex-direction: row-reverse;
-      & ion-icon:nth-child(2){
-        display: var(--dp-icon-bag);
-      }
-    }
-    &--left{
-      visibility: var(--vsb-icon-left);
-    }
-  }
-  &__logo{
-    position: var(--ps-logo);
-    top: 50%;
-    left: 0;
-    transform: translateY(var(--trlY-logo));
-    transition: transform 1.5s ease .2s;
-    &--site-name{
-      font-size: calc(30px + .8vw);
-    }
-    & h1 a{
-      text-decoration: none;
-      font-family: var(--ff-logo);
-      font-weight: 400;
-      color: inherit;
-    }
-  }
-  &__menu{
-    display: var(--dp-menu);
-    position: var(--ps-menu);
-    top: 0;
-    left: 0;
-    width: var(--w-menu);
-    height: var(--h-menu);
-    z-index: 1; 
-    padding-top: var(--pt-menu); 
-    overflow: auto; 
-    background-color: var(--bg-menu); 
-    & ul{
-      display: flex;
-      flex-direction: var(--fl-dr-menu);
-      justify-content: center;
-      list-style: none;
-      background-color: var(--bg-ulmenu);
-      width: var(--w-ulmenu);
-      & li{
-        padding-left: 25px;
-        & a{
-          text-decoration: none;
-          color: inherit;
-          text-transform: uppercase;
-        }
-      }
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--pt-header) 0;
+    position: relative;
 
+    &__icon {
+        font-size: calc(15px + 0.5vw);
+        cursor: pointer;
+
+        &--right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-direction: row-reverse;
+
+            & ion-icon:nth-child(2) {
+                display: var(--dp-icon-bag);
+            }
+        }
+
+        &--left {
+            visibility: var(--vsb-icon-left);
+        }
     }
-  }
+
+    &__logo {
+        position: var(--ps-logo);
+        top: 50%;
+        left: 0;
+        transform: translateY(var(--trlY-logo));
+        transition: transform 1.5s ease .2s;
+
+        &--site-name {
+            font-size: calc(30px + .8vw);
+            wz: 1px;
+        }
+
+        & h1 a {
+            text-decoration: none;
+            font-family: var(--ff-logo);
+            font-weight: 400;
+            color: inherit;
+        }
+    }
+
+    &__menu {
+        display: var(--dp-menu);
+        position: var(--ps-menu);
+        top: 0;
+        left: 0;
+        width: var(--w-menu);
+        height: var(--h-menu);
+        z-index: 1;
+        padding-top: var(--pt-menu);
+        overflow: auto;
+        background-color: var(--bg-menu);
+
+        & .children {
+            list-style: none;
+            transition: all 500ms ease-in-out;
+            opacity: 0;
+            transform: translateX(-20%);
+        }
+        & .page_item:hover > .children{
+          opacity: 1;
+        }
+        & .page_item{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
+        & ul:first-child {
+            display: flex;
+            flex-direction: var(--fl-dr-menu);
+            justify-content: center;
+            list-style: none;
+            background-color: var(--bg-ulmenu);
+            width: var(--w-ulmenu);
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            position: var(--ps-ul);
+            top: 0;
+            bottom: 0;
+            width: var(--w-ul);
+            & li {
+                padding-left: 25px;
+
+                & a {
+                    text-decoration: none;
+                    color: inherit;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
 }
 
-.move_right{
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+.move_right {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 @keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
