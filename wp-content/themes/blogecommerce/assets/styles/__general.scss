@@ -25,6 +25,7 @@ body{
   transition: background .5s ease;
   background-color: var(--bg-secondary) !important;
   color: var(--cl-text-secondary) !important;
+  position: relative;
 }
 
 .btn{

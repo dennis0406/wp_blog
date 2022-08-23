@@ -35,7 +35,6 @@
 
         &--site-name {
             font-size: calc(30px + .8vw);
-            wz: 1px;
         }
 
         & h1 a {
@@ -62,10 +61,16 @@
             list-style: none;
             transition: all 500ms ease-in-out;
             opacity: 0;
+            width: 0;
+            height: 0;
             transform: translateX(-20%);
+            overflow: hidden;
         }
         & .page_item:hover > .children{
-          opacity: 1;
+            opacity: 1;
+            width: auto;
+            height: auto;
+            transition: all 1s ease-in-out;
         }
         & .page_item{
           display: flex;
@@ -85,6 +90,7 @@
             top: 0;
             bottom: 0;
             width: var(--w-ul);
+            z-index: 1;
             & li {
                 padding-left: 25px;
 

@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="entry-thumbnail">
-  <?php display_thumbnail( 'thumbnail' ); ?>
+  <?php display_thumbnail( 'thumbnail', false ); ?>
   </div>
   <header class="entry-header">
 <?php display_entry_header(); ?>
