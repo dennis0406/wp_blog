@@ -3,8 +3,8 @@
 function create_custom_post_type()
 {
 	$label = array(
-		'name' => 'products',
-		'singular_name' => 'product'
+		'name' => 'Products',
+		'singular_name' => 'Product'
 	);
 
 	$args = array(
@@ -66,10 +66,8 @@ if (!function_exists('base_setup_theme')) {
 				'gallery'
 			)
 		);
-		$default_background = array(
-			'default-color' => '#e8e8e8',
-		);
-		add_theme_support('custom-background', $default_background);
+	
+		add_theme_support('custom-background');
 		register_nav_menu('primary-menu', __('Primary Menu', 'dennis'));
 		// sidebar
 		$sidebar = array(
@@ -140,23 +138,23 @@ if (!function_exists('display_pagination')) {
 
 			// Function display thumbnail
 			if (!function_exists('display_thumbnail')) {
-				function display_thumbnail($size, $latest)
+				function display_thumbnail($size, $latest, $class)
 				{
 					if($latest){
 						if (!post_password_required() || has_post_format('image')) : ?>
 							<?php
 										if (has_post_thumbnail() ) {
-											$attr = array('class' => 'post__item__image--latest');
+											$attr = array('class' => $class);
 											the_post_thumbnail($size, $attr);
 										} else {
-							?> <img class="post__item__image--latest" src="<?php bloginfo('template_directory'); ?>/assets/images/default-featured-image.jpg" alt=""> <?php
+							?> <img class="<?php echo $class ?>" src="<?php bloginfo('template_directory'); ?>/assets/images/default-featured-image.jpg" alt=""> <?php
 				}?><?php
 									endif;
 					}else{
 						if (!is_single()  && !post_password_required() || has_post_format('image')) : ?>
 							<?php
 										if (has_post_thumbnail() ) {
-											$attr = array('class' => 'post__item__image');
+											$attr = array('class' => $class);
 											the_post_thumbnail($size, $attr);
 										}?><?php
 									endif;
@@ -166,16 +164,16 @@ if (!function_exists('display_pagination')) {
 
 			//Function display entry header
 			if (!function_exists('display_entry_header')) {
-				function display_entry_header()
+				function display_entry_header($class)
 				{
 					if (is_single()) : ?>
-				<h1 class="post__item__content__title">
+				<h1 class="<?php echo $class ?>">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 						<?php the_title(); ?>
 					</a>
 				</h1>
 			<?php else : ?>
-				<h3 class="post__item__content__title">
+				<h3 class="<?php echo $class ?>">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 						<?php the_title(); ?>
 					</a>
@@ -186,17 +184,17 @@ if (!function_exists('display_pagination')) {
 
 				// Function display information of the post
 				if (!function_exists('display_entry_meta')) {
-					function display_entry_meta()
+					function display_entry_meta($class)
 					{
 						if (!is_page()) :
-							echo '<div class="post__item__content__meta">';
+							echo '<div class="'.$class.'">';
 							printf(
-								__('<span class="post__item__content__meta--author">by <b>%1$s</b></span>', 'dennis'),
+								__('<span class="'.$class.'--author">by <b>%1$s</b></span>', 'dennis'),
 								get_the_author()
 							);
 
 							printf(
-								__('<span class="post__item__content__meta--published"> %1$s</span>', 'dennis'),
+								__('<span class="'.$class.'--published"> %1$s</span>', 'dennis'),
 								get_the_date()
 							);
 							echo '</div>';
@@ -227,10 +225,10 @@ if (!function_exists('display_pagination')) {
 
 				// Function display tag if in the single page
 				if (!function_exists('display_entry_tag')) {
-					function display_entry_tag()
+					function display_entry_tag($class)
 					{
 						if (has_tag()) :
-							echo '<div class="entry-tag">';
+							echo '<div class="'.$class.'">';
 							printf(__('Tagged in %1$s', 'dennis'), get_the_tag_list('', ', '));
 							echo '</div>';
 						endif;

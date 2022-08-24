@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap'); // font for logo
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ubuntu+Mono&display=swap'); //Font for title and general text
+
 :root{
+  --font-text: 'Ubuntu Mono', monospace;
+  --font-title: 'Rubik Mono One', sans-serif;
   --bg-primary: #e8e8e8;
   --bg-secondary: #222;
   --cl-text-primary: #000000;
@@ -7,12 +11,18 @@
   --w-container: 95%;
   --px-container: 0;
   --p-btn: 5px 8px;
+  --m-t-title: 10px;
+  --w-title-section: 20px;
   @include respond(tab-land){
-    --p-btn: 8px 10px
+    --p-btn: 8px 10px;
+    --m-t-title: 20px;
+    --w-title-section: 30px;
   }
   @include respond(desktop){
     --w-container: 95%;
     --p-btn: 8px 14px;
+    --m-t-title: 25px;
+    --w-title-section: 50px;
   }
   // Header
   --ff-logo: 'Rubik Burned', cursive;
@@ -64,9 +74,10 @@
     --line-height-banner: 1;
   }
 
+
   // newest Post
   --flex-d-post: column;
-  --m-t-post: 30px;
+  --m-t-post: 20px;
   --opct-img-post: .9;
   --p-content-post: 0 15px;
   --h-item-post: 45vw;
@@ -77,7 +88,7 @@
   --bg-item-post: #e6e6e63e;
   @include respond(tab-land){
     --flex-d-post: row;
-    --m-t-post: 50px;
+    --m-t-post: 30px;
     --p-content-post: 0 25px;
     --h-item-post: 30vw;
     --p-meta-post: 10px;
@@ -88,13 +99,22 @@
   }
   @include respond(desktop){
     --flex-d-post: row;
-    --m-t-post: 65px;
+    --m-t-post: 40px;
     --p-content-post: 0 35px;
     --h-item-post: 25vw;
     --p-meta-post: 15px;
-    --fz-title-post: calc(15px + 1.3vw);
+    --fz-title-post: calc(13px + 1.3vw);
     --fz-meta-post: 15px;
     --opct-img-post: 0;
     --cl-content-post: inherit;
+  }
+
+  // product - sidebar
+  --fd-container-product-sidebar: column;
+  @include respond(tab-land){
+    --fd-container-product-sidebar: column;
+  }
+  @include respond(desktop){
+    --fd-container-product-sidebar: row;
   }
 }
