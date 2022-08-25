@@ -13,10 +13,10 @@
 
 <body class="switch__dark-mode" <?php body_class(); ?>>
     <div class="container">
-        <header class="header">
+        <header class="header switch__dark-mode">
             <ion-icon onclick="display_menu()" id="btn_menu" class="header__icon--left header__icon" name="menu-outline"></ion-icon>
             <?php display_menu('primary-menu', 'header__menu') ?>
-            <?php display_logo(); ?>
+            <?php display_logo('header__logo'); ?>
             <div class="header__icon--right header__icon">
                 <ion-icon name="search-outline"></ion-icon>
                 <ion-icon name="bag-outline"></ion-icon>

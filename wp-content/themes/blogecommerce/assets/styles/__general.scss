@@ -69,3 +69,16 @@ body {
     margin-left: 2px;
     align-items: center;
 }
+
+.view-all{
+    float: right;
+    color: inherit;
+}
+
+.price{
+    font-weight: 600;
+}
+.price::before{
+    content: "\24";
+    font-weight: 600;
+}

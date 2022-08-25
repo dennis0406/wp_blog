@@ -1,0 +1,53 @@
+.footer{
+  &__container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--gtemp-footer);
+  }
+  &--left{
+    width: 100%;
+    padding-right: 10px;
+    &__desc{
+      @include text_vertical_overflow(7);
+    }
+    &__image--site-name h1 a{
+      text-decoration: none;
+      font-family: var(--ff-logo);
+      font-weight: 400;
+      color: inherit;
+      font-size: calc(15px + .8vw);
+    }
+  }
+  &--middle{
+    display: flex;
+    flex-direction: var(--fd-middle--footer);
+    gap: 20px;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: var(--align-middle-footer);
+    &__posts, &__category{
+      justify-content: center;
+      display: flex;
+      flex-direction: var(--fd-list-middle-footer);
+    }
+    &__posts__item a{
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  &--right{
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 10px;
+    gap: 20px;
+    &__item{
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      & ion-icon{
+        font-size: 24px;
+      }
+    }
+  }
+}

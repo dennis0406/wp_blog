@@ -82,12 +82,18 @@ if (!function_exists('base_setup_theme')) {
 	add_action('init', 'base_setup_theme');
 }
 
-// Function to display logo
+
 if (!function_exists('display_logo')) {
-	function display_logo()
+	/**
+ * function to display logo
+ * @param string $class $class will have the suffixes "--site-name" for name of the site or nothing for the wrapper.
+ * 
+ *
+ */
+	function display_logo($class)
 	{ ?>
-		<div class="header__logo">
-			<div class="header__logo--site-name">
+		<div class="<?php echo $class ?>">
+			<div class="<?php echo $class ?>--site-name">
 				<?php printf(
 					'<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
 					get_bloginfo('url'),
@@ -235,5 +241,11 @@ if (!function_exists('display_pagination')) {
 					}
 				}
 
-				
+				function wpa82763_custom_type_in_categories( $query ) {
+					if ( $query->is_main_query()
+					&& ( $query->is_category() || $query->is_tag() ) ) {
+							$query->set( 'post_type', array( 'post', 'product' ) );
+					}
+			}
+			add_action( 'pre_get_posts', 'wpa82763_custom_type_in_categories' );
 							?>
