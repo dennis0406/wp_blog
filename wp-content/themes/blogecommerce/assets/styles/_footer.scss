@@ -1,53 +1,122 @@
-.footer{
-  &__container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: var(--gtemp-footer);
-  }
-  &--left{
-    width: 100%;
-    padding-right: 10px;
-    &__desc{
-      @include text_vertical_overflow(7);
+.footer {
+    &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: var(--gtemp-footer);
+        margin-top: var(--mt-footer);
+        float: bottom;
     }
-    &__image--site-name h1 a{
-      text-decoration: none;
-      font-family: var(--ff-logo);
-      font-weight: 400;
-      color: inherit;
-      font-size: calc(15px + .8vw);
+
+    &--left {
+        width: 100%;
+        padding-right: 10px;
+
+        &__desc {
+            @include text_vertical_overflow(7);
+        }
+
+        &__image--site-name h1 a {
+            text-decoration: none;
+            font-family: var(--ff-logo);
+            font-weight: 400;
+            color: inherit;
+            font-size: calc(15px + .8vw);
+        }
     }
-  }
-  &--middle{
-    display: flex;
-    flex-direction: var(--fd-middle--footer);
-    gap: 20px;
-    padding: 0 10px;
-    justify-content: center;
-    align-items: var(--align-middle-footer);
-    &__posts, &__category{
-      justify-content: center;
-      display: flex;
-      flex-direction: var(--fd-list-middle-footer);
+
+    &--middle {
+        display: flex;
+        flex-direction: var(--fd-middle--footer);
+        gap: 20px;
+        padding: 0 10px;
+        justify-content: center;
+        align-items: var(--align-middle-footer);
+
+        &__posts, &__category {
+            display: flex;
+            justify-content: center;
+            flex-direction: var(--fd-list-middle-footer);
+            gap: 15px;
+            position: relative;
+        }
+        &__posts__item a, &__category__item {
+            text-decoration: none;
+            color: inherit;
+
+            @include animate_underline;
+
+            &::before {
+                @include animate_underline_before(currentColor);
+            }
+
+            &:hover::before {
+                @include animate_underline_hover_before;
+            }
+        }
     }
-    &__posts__item a{
-      text-decoration: none;
-      color: inherit;
+
+    &--right {
+        display: flex;
+        justify-content: var(--just-content-right-footer);
+        padding-left: 10px;
+        gap: 20px;
+        height: fit-content;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            justify-content: center;
+            align-items: center;
+
+            @include animate_underline;
+
+            &::before {
+                @include animate_underline_before(currentColor);
+            }
+
+            &:hover::before {
+                @include animate_underline_hover_before;
+            }
+
+            & ion-icon {
+                font-size: 28px;
+                transition: color .3 ease-in;
+            }
+
+            &:first-child ion-icon:hover {
+                color: #3b5998;
+            }
+
+            &:nth-child(2) ion-icon:hover {
+                color: #00aced;
+            }
+
+            &:nth-child(3) ion-icon:hover {
+                color: #675144;
+            }
+
+            &:nth-child(4) ion-icon:hover {
+                color: #cb2027;
+            }
+        }
     }
-  }
-  &--right{
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 10px;
-    gap: 20px;
-    &__item{
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      & ion-icon{
-        font-size: 24px;
-      }
+
+    &__author {
+        width: fit-content;
+        margin: 0 auto;
+
+        & a {
+            color: inherit;
+            text-decoration: none;
+            @include animate_underline;
+            &::before {
+                @include animate_underline_before(currentColor);
+            }
+            &:hover::before {
+                @include animate_underline_hover_before;
+            }
+        }
     }
-  }
 }

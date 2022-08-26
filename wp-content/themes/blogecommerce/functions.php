@@ -192,7 +192,6 @@ if (!function_exists('display_pagination')) {
 				if (!function_exists('display_entry_meta')) {
 					function display_entry_meta($class)
 					{
-						if (!is_page()) :
 							echo '<div class="'.$class.'">';
 							printf(
 								__('<span class="'.$class.'--author">by <b>%1$s</b></span>', 'dennis'),
@@ -204,7 +203,6 @@ if (!function_exists('display_pagination')) {
 								get_the_date()
 							);
 							echo '</div>';
-						endif;
 					}
 				}
 

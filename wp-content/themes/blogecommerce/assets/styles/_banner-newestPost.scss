@@ -10,7 +10,6 @@
         width: 100%;
         position: relative;
         text-decoration: none;
-
         &__image {
             width: 100%;
             height: 50vw;
@@ -64,8 +63,7 @@
       display: flex;
     flex-direction: var(--flex-d-post);
     margin-top: var(--m-t-post);
-    border-top: 1px solid #e6e6e63e;
-    border-bottom: 1px solid #e7e1e1c1;
+    // border-top: 1px solid #e6e6e63e;
     width: 100%;
     }
     &__item {
@@ -106,10 +104,17 @@
             &__title a{
                 font-size: var(--fz-title-post);
                 line-height: 1;
-                text-decoration: none;
-                color: inherit;
                 word-spacing: -2px;
                 font-weight: 600;
+                text-decoration: none;
+                color: inherit;
+                @include animate_underline;
+                    &::before {
+                        @include animate_underline_before(currentColor);
+                    }
+                    &:hover::before {
+                        @include animate_underline_hover_before;
+                    }
                 // font-family: var(--font-title);
             }
 

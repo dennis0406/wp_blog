@@ -1,12 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>All posts here</h1>
-</body>
-</html>
+<?php get_header(); ?>
+
+<div class="container__both-main-sidebar">
+	<div class="main__container">
+		
+  <?php
+$type = 'post';
+$args = array(
+  'post_type' => $type,
+  'post_status' => 'publish',
+  'posts_per_page' => 3,
+  
+);
+$my_query = null;
+$my_query = new WP_Query($args);
+if ($my_query->have_posts()) {
+  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('post__item'); ?>>
+      <?php display_thumbnail('thumbnail', true, 'post__item__image--latest'); ?>
+      <div class="post__item__content">
+        <?php display_entry_header('post__item__content__title'); ?>
+        <div class="post__item__content__excerpt">
+          <?php display_entry_content(); ?>
+        </div>
+        <?php display_entry_meta('post__item__content__meta'); ?>
+    </article>
+<?php
+  endwhile;
+}
+wp_reset_postdata();
+?>
+
+
+	</div>
+	<section class="sidebar__container">
+		<?php get_sidebar(); ?>
+	</section>
+</div>
+
+<?php get_footer(); ?>

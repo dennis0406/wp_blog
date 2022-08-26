@@ -19,8 +19,8 @@
 
 <div class="container__both-main-sidebar">
 	<div class="main__container">
-		<h2 class="title__section">All products</h2>
-		<a href="/post?pt=post" class="view-all">View all</a>
+		<h2 class="title__section">our products</h2>
+		<a href="<?php echo get_post_type_archive_link('product') ?>" class="view-all">View all</a>
 		<section class="product__list">
 			<?php get_template_part('product-list', 'none'); ?>
 		</section>

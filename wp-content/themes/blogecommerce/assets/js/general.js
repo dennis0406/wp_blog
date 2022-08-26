@@ -3,6 +3,8 @@
 var btn = document.getElementById("btn_menu");
 var modal_menu = document.getElementsByClassName("header__menu")[0];
 var ulmenu = modal_menu.getElementsByTagName("ul")[0];
+ulmenu.classList.add("switch__dark-mode");
+
 btn.onclick = function () {
   modal_menu.style.display = "block";
   ulmenu.classList.add("move_right");
@@ -35,4 +37,8 @@ function dark_mode() {
     localStorage.setItem("dnbl_dark", "false");
     document.getElementById("switch__icon").innerHTML = '<ion-icon name="moon-outline" onclick="dark_mode()"></ion-icon>';
   }
+}
+
+function searchBtn() {
+  document.getElementById("search_global").classList.toggle('search__open')
 }

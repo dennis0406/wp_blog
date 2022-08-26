@@ -38,7 +38,7 @@
   --h-menu: 100%;
   --pt-menu: 100px;
   --bg-menu: rgba(0, 0, 0, 0.563);
-  --bg-ulmenu: #fefefe;
+  --bg-ulmenu: #e8e8e8;
   --w-ulmenu: fit-content;
   --dp-icon-bag: none;
   --trl-ulmenu: -100%;
@@ -124,6 +124,7 @@
   --w-title-sidebar: 20px;
   --fd-sidebar-list: column;
   --w-taxonomy-sidebar: 100%;
+  --w-post-recmm-sidebar: 100%;
 
   @include respond(tab-land){
     --fd-container-main-sidebar: column;
@@ -139,6 +140,7 @@
     --w-title-sidebar: 30px;
     --fd-sidebar-list: row;
     --w-taxonomy-sidebar: 80%;
+    --w-post-recmm-sidebar: 80%;
   }
   @include respond(desktop){
     --fd-container-main-sidebar: row;
@@ -151,29 +153,37 @@
     --h-prd-image: auto;
 
     --fz-titile-sidebar: calc(9px + 1.35vw);
-    --w-title-sidebar: 22px;
+    --w-title-sidebar: 20px;
     --fd-sidebar-list: column;
     --w-taxonomy-sidebar: 90%;
+    --w-post-recmm-sidebar: 100%;
   }
 
   // Footer
+  --mt-footer: 15px;
   --gtemp-footer: 1fr;
   --fd-middle--footer: column;
   --fd-list-middle-footer: row;
   --justct-right-footer: center;
   --align-middle-footer: center;
+  --just-content-right-footer: center;
+
   @include respond(tab-land){
+    --mt-footer: 25px;
     --gtemp-footer: 30% 40% 30%;
     --fd-middle--footer: column;
     --fd-list-middle-footer: column;
     --justct-right-footer: space-between;
     --align-middle-footer: center;
+    --just-content-right-footer: flex-end;
   }
   @include respond(desktop){
+    --mt-footer: 35px;
     --gtemp-footer: 30% 40% 30%;
     --fd-middle--footer: row;
     --fd-list-middle-footer: column;
     --justct-right-footer: space-between;
     --align-middle-footer: flex-start;
+    --just-content-right-footer: flex-end;
   }
 }

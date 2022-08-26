@@ -16,7 +16,6 @@ if ($my_query->have_posts()) {
         <?php display_entry_header('post__item__content__title'); ?>
         <div class="post__item__content__excerpt">
           <?php display_entry_content(); ?>
-          <?php (is_single() ? display_entry_tag('post__item__content__meta__tag') : ''); ?>
         </div>
         <?php display_entry_meta('post__item__content__meta'); ?>
     </article>

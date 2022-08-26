@@ -56,9 +56,8 @@
 
             </div>
         </div>
-        <p>
-            Design by <a href="#" target="blank">Dennis
-                © <?php echo date('Y'); ?>
+        <p class="footer__author">
+            Design by <a href="#author" target="blank">Dennis © <?php echo date('Y'); ?>
             </a>
         </p>
 </footer>
