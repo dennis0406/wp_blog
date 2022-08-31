@@ -12,7 +12,7 @@
 	</a>
 </section>
 <h2 class="title__section">Latest posts</h2>
-<a href="" class="view-all">View all</a>
+<a href="/post" class="view-all">View all</a>
 <section class="post--latest">
 	<?php get_template_part('latest-post') ?>
 </section>

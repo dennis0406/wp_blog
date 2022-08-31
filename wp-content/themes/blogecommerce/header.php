@@ -21,17 +21,16 @@
                 <ion-icon onclick="searchBtn()" name="search-outline"></ion-icon>
                 <ion-icon name="bag-outline"></ion-icon>
                 <span id="switch__icon">
-                    <ion-icon name="moon-outline" onclick="dark_mode()"></ion-icon>
+                    <ion-icon name="moon-outline" onclick="dark_mode()" title="Turn on dark mode"></ion-icon>
                 </span>
             </div>
             <div class="search--global" id="search_global">
-            <div class="search--global__group__input">
-                <ion-icon class="search--global__group__input__icon" name="search-outline"></ion-icon>
-                <input type="text" placeholder="Search..." class="search--global__group__input__field">
+                <div class="search--global__group__input">
+                    <ion-icon class="search--global__group__input__icon" name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search..." class="search--global__group__input__field">
+                </div>
+                <button class="search--global__button">search</button>
             </div>
-            <button class="search--global__button btn switch__dark-mode">search now</button>
-        </div>
         </header>
-        
+
         <?php wp_body_open(); ?>
-        

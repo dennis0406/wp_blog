@@ -8,20 +8,16 @@ $args = array(
 $my_query = new WP_Query($args);
 if ($my_query->have_posts()) {
   while ($my_query->have_posts()) : $my_query->the_post();
-    $regular_price = get_post_meta(get_the_ID(), 'regular price', true);
-    $sale_price = get_post_meta(get_the_ID(), 'sale price', true);
-    $desc = get_post_meta(get_the_ID(), 'desc', true);
-    $color = get_post_meta(get_the_ID(), 'color', true);
-
-    if (!empty($regular_price)) {
-    }
+    $regular_price = get_post_meta(get_the_ID(), '_regular_price', true);
+    $sale_price = get_post_meta(get_the_ID(), '_sale_price', true);
+    $desc = get_post(get_the_ID())->post_excerpt;
 ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('product__item'); ?>>
       <?php display_thumbnail('', false, 'product__item__image'); ?>
       <div class="product__item__content">
         <div class="product__item__content__category">
-          <?php the_category(' &bull; ') ; ?>
+          <?php get_post(get_the_ID())->post_category; ?>
         </div>
         <?php display_entry_header('product__item__content__title'); ?>
         <p class="product__item__content__desc"><?php echo $desc ?></p>
