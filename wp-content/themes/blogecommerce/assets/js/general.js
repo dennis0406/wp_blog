@@ -26,7 +26,7 @@ window.onclick = function (event) {
 
 // Dark mode js
 var darkOn = localStorage.getItem("dnbl_dark");
-console.log(darkOn);
+// console.log(darkOn);
 if (darkOn == "true") {
   dark_mode();
 }
@@ -48,4 +48,10 @@ function dark_mode() {
 
 function searchBtn() {
   document.getElementById("search_global").classList.toggle('search__open')
+}
+
+var shipping_calculator_button = document.getElementsByClassName('shipping-calculator-button')[0];
+if(shipping_calculator_button){
+  shipping_calculator_button.classList.add('btn');
+  // shipping_calculator_button.classList.add('animate_underline');
 }

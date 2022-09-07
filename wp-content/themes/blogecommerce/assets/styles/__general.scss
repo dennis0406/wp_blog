@@ -43,8 +43,8 @@ body {
 }
 
 .btn {
-    background-color: var(--bg-primary);
-    color: var(--cl-text-primary);
+    color: var(--cl-text-secondary) !important;
+    background-color: var(--bg-secondary) !important;
     padding: var(--p-btn);
     text-transform: uppercase;
     border-radius: 4px;
@@ -96,4 +96,22 @@ body {
 
 .active::before{
     transform: scaleX(1) !important;
+}
+
+.not_single{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-bottom: 1px solid currentColor;
+    border-bottom-style:dotted ;
+}
+
+.animate_underline{
+    color: inherit;
+    @include animate_underline;
+    &::before {
+        @include animate_underline_before(currentColor);
+    }
+    &:hover::before {
+        @include animate_underline_hover_before;
+    }
 }

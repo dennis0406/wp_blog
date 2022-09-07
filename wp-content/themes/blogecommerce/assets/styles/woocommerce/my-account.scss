@@ -1,0 +1,30 @@
+.my-account-page{
+  display: grid;
+  grid-template-columns: var(--grid-temp-cl-my-account-page);
+  box-sizing: border-box;
+  gap: 2%;
+  margin-top: var(--m-t-post);
+}
+.woocommerce-MyAccount-navigation{
+  display: flex;
+  flex-direction: var(--flex-direc-my-account-page);
+  background-color: inherit;
+  & ul{
+    list-style: none;
+    & li{
+      padding: 10px 0;
+      & a{
+        color: inherit;
+        @include animate_underline;
+        &::before {
+            @include animate_underline_before(currentColor);
+        }
+        &:hover::before {
+            @include animate_underline_hover_before;
+        }
+      }
+      
+    }
+    
+  }
+}

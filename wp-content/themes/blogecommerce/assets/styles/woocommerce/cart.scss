@@ -1,0 +1,48 @@
+.product-name a {
+    text-decoration: none;
+    color: inherit;
+
+    @include animate_underline;
+
+    &::before {
+        @include animate_underline_before(currentColor);
+    }
+
+    &:hover::before {
+        @include animate_underline_hover_before;
+    }
+}
+.woocommerce table.shop_table {
+  border: 1px solid currentColor !important;
+  margin: 0 -1px 24px 0;
+  text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 5px;
+}
+
+.woocommerce table.shop_table td {
+  border-top: 1px solid currentColor !important;
+  padding: 9px 12px;
+  vertical-align: middle;
+  line-height: 1.5em;
+}
+
+.woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th {
+  font-weight: 700;
+  border-top: 1px solid currentColor !important;
+}
+
+.product-thumbnail{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.shop_table thead tr th{
+  text-transform: uppercase;
+}
+.input-text{
+  padding: 5px 0;
+  margin-right: 20px;
+}

@@ -169,7 +169,7 @@
   --just-content-right-footer: center;
 
   @include respond(tab-land){
-    --mt-footer: 25px;
+    --mt-footer: 35px;
     --gtemp-footer: 30% 40% 30%;
     --fd-middle--footer: column;
     --fd-list-middle-footer: column;
@@ -178,12 +178,26 @@
     --just-content-right-footer: flex-end;
   }
   @include respond(desktop){
-    --mt-footer: 35px;
+    --mt-footer: 55px;
     --gtemp-footer: 30% 40% 30%;
     --fd-middle--footer: row;
     --fd-list-middle-footer: column;
     --justct-right-footer: space-between;
     --align-middle-footer: flex-start;
     --just-content-right-footer: flex-end;
+  }
+
+
+  // My account page
+  --grid-temp-cl-my-account-page: 1fr;
+  --flex-direc-my-account-page: row;
+
+  @include respond(tab-land){
+    --grid-temp-cl-my-account-page: 15% 83%;
+    --flex-direc-my-account-page: column;
+  }
+  @include respond(desktop){
+    --grid-temp-cl-my-account-page: 18% 80%;
+    --flex-direc-my-account-page: column;
   }
 }

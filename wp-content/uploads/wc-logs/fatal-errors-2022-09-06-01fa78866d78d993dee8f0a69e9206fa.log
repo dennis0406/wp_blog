@@ -1,0 +1,8 @@
+2022-09-06T01:29:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in /var/www/html/wp-content/plugins/woocommerce/includes/wc-formatting-functions.php on line 291
+
+2022-09-06T01:29:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in /var/www/html/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-data.php on line 713
+
+2022-09-06T01:31:14+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in /var/www/html/wp-includes/taxonomy.php on line 1650
+
+2022-09-06T04:07:42+00:00 CRITICAL syntax error, unexpected '}' in /var/www/html/wp-content/themes/blogecommerce/content.php on line 4
+

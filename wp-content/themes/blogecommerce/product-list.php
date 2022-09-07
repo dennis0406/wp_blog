@@ -17,16 +17,18 @@ if ($my_query->have_posts()) {
       <?php display_thumbnail('', false, 'product__item__image'); ?>
       <div class="product__item__content">
         <div class="product__item__content__category">
-          <?php get_post(get_the_ID())->post_category; ?>
+          <?php echo(wp_get_post_terms( get_the_ID(), 'product_cat' )[0]->name); ?>
         </div>
         <?php display_entry_header('product__item__content__title'); ?>
         <p class="product__item__content__desc"><?php echo $desc ?></p>
         <div class="product__item__content__price">
-          <p class="product__item__content__price--sale price"><?php echo $sale_price ?></p>
+        <?php if($sale_price ==! null){
+            echo '<p class="product__item__content__price--sale price">'.$sale_price.'</p>';
+          } ?>
           <p class="product__item__content__price--regular price"><?php echo $regular_price ?></p>
         </div>
         <div class="product__item__content__add-to-card">
-          <a href="#addtocard" class="btn">Add to card</a>
+        <a href="?add-to-cart=<?php echo the_ID(); ?>#alert_cart" class="btn">Add to card</a>
         </div>
       </div>
     </article>

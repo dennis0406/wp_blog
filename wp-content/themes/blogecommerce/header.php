@@ -19,18 +19,18 @@
             <?php display_logo('header__logo'); ?>
             <div class="header__icon--right header__icon">
                 <ion-icon onclick="searchBtn()" name="search-outline"></ion-icon>
-                <ion-icon name="bag-outline"></ion-icon>
+                <a href="/cart" class="header__icon--right__cart"><ion-icon name="bag-outline"></ion-icon></a>
                 <span id="switch__icon">
                     <ion-icon name="moon-outline" onclick="dark_mode()" title="Turn on dark mode"></ion-icon>
                 </span>
             </div>
-            <div class="search--global" id="search_global">
+            <form action="" method="GET" class="search--global" id="search_global">
                 <div class="search--global__group__input">
                     <ion-icon class="search--global__group__input__icon" name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Search..." class="search--global__group__input__field">
+                    <input type="text" placeholder="Search..." name="s" class="search--global__group__input__field">
                 </div>
-                <button class="search--global__button">search</button>
-            </div>
+                <input type="submit" class="search--global__button" value="Search"/>
+            </form>
         </header>
 
         <?php wp_body_open(); ?>

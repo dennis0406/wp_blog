@@ -7,7 +7,7 @@
     top: 0;
     position: -webkit-sticky;
     position: sticky;
-    z-index: 1;
+    z-index: 3;
     background-color: var(--bg-primary);
     &__icon {
         font-size: calc(15px + 0.5vw);
@@ -19,8 +19,18 @@
             align-items: center;
             flex-direction: row-reverse;
 
-            & ion-icon:nth-child(2) {
+            &__cart {
                 display: var(--dp-icon-bag);
+            }
+            &__cart{
+                color: inherit;
+                // @include animate_underline;
+                // &::before {
+                //  @include animate_underline_before(currentColor);
+                // }
+                // &:hover::before {
+                //  @include animate_underline_hover_before;
+                // }
             }
         }
 

@@ -85,19 +85,19 @@
                 transition: color .3 ease-in;
             }
 
-            &:first-child ion-icon:hover {
+            &:first-child:hover ion-icon {
                 color: #3b5998;
             }
 
-            &:nth-child(2) ion-icon:hover {
+            &:nth-child(2):hover ion-icon {
                 color: #00aced;
             }
 
-            &:nth-child(3) ion-icon:hover {
+            &:nth-child(3):hover ion-icon {
                 color: #675144;
             }
 
-            &:nth-child(4) ion-icon:hover {
+            &:nth-child(4):hover ion-icon {
                 color: #cb2027;
             }
         }
