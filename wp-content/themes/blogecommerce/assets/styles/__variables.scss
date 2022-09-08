@@ -5,7 +5,9 @@
   --font-text: 'Ubuntu Mono', monospace;
   --font-title: 'Rubik Mono One', sans-serif;
   --bg-primary: #e8e8e8;
+  --cl-border: #d3ced2;
   --bg-secondary: #222;
+  --cl-pink: #ff0084;
   --cl-text-primary: #000000;
   --cl-text-secondary: #e6e6e6;
   --w-container: 95%;
@@ -191,13 +193,27 @@
   // My account page
   --grid-temp-cl-my-account-page: 1fr;
   --flex-direc-my-account-page: row;
-
+  --fz-icon-nav-my-account: calc(20px + 0.5vw);
+  --display-text-nav-my-account: block;
+  --display-icon-nav-my-account: none;
+  --p-nav-item-my-account: 10px 15px 10px 0;
+  
   @include respond(tab-land){
     --grid-temp-cl-my-account-page: 15% 83%;
     --flex-direc-my-account-page: column;
+    --fz-icon-nav-my-account: calc(30px + 0.5vw);
+    --display-text-nav-my-account: none;
+    --display-icon-nav-my-account: block;
+    --p-nav-item-my-account: 10px 0 10px 0;
+    
   }
   @include respond(desktop){
     --grid-temp-cl-my-account-page: 18% 80%;
     --flex-direc-my-account-page: column;
+    --fz-icon-nav-my-account: calc(20px + 0.5vw);
+    --display-text-nav-my-account: block;
+    --display-icon-nav-my-account: block;
+    --p-nav-item-my-account: 10px 0 10px 20px;
+    
   }
 }

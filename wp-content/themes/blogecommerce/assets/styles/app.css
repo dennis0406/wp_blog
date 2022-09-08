@@ -51,7 +51,9 @@ h6 {
   --font-text: 'Ubuntu Mono', monospace;
   --font-title: 'Rubik Mono One', sans-serif;
   --bg-primary: #e8e8e8;
+  --cl-border: #d3ced2;
   --bg-secondary: #222;
+  --cl-pink: #ff0084;
   --cl-text-primary: #000000;
   --cl-text-secondary: #e6e6e6;
   --w-container: 95%;
@@ -111,7 +113,11 @@ h6 {
   --align-middle-footer: center;
   --just-content-right-footer: center;
   --grid-temp-cl-my-account-page: 1fr;
-  --flex-direc-my-account-page: row; }
+  --flex-direc-my-account-page: row;
+  --fz-icon-nav-my-account: calc(20px + 0.5vw);
+  --display-text-nav-my-account: block;
+  --display-icon-nav-my-account: none;
+  --p-nav-item-my-account: 10px 15px 10px 0; }
   @media (max-width: 990px) and (min-width: 551px) {
     :root {
       --p-btn: 8px 10px;
@@ -222,11 +228,19 @@ h6 {
   @media (max-width: 990px) and (min-width: 551px) {
     :root {
       --grid-temp-cl-my-account-page: 15% 83%;
-      --flex-direc-my-account-page: column; } }
+      --flex-direc-my-account-page: column;
+      --fz-icon-nav-my-account: calc(30px + 0.5vw);
+      --display-text-nav-my-account: none;
+      --display-icon-nav-my-account: block;
+      --p-nav-item-my-account: 10px 0 10px 0; } }
   @media (min-width: 991px) {
     :root {
       --grid-temp-cl-my-account-page: 18% 80%;
-      --flex-direc-my-account-page: column; } }
+      --flex-direc-my-account-page: column;
+      --fz-icon-nav-my-account: calc(20px + 0.5vw);
+      --display-text-nav-my-account: block;
+      --display-icon-nav-my-account: block;
+      --p-nav-item-my-account: 10px 0 10px 20px; } }
 
 body, * {
   font-family: var(--font-text); }
@@ -333,6 +347,16 @@ body {
   .animate_underline:hover::before {
     transform: scaleX(1); }
 
+input[type=text], input[type=tel], input[type=email], input[type=password], textarea {
+  border: 1px solid var(--cl-border);
+  background-color: inherit;
+  color: currentColor;
+  border-radius: 4px;
+  padding-left: 10px; }
+
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
+  border-color: var(--cl-pink); }
+
 .header {
   display: flex;
   width: 100%;
@@ -353,9 +377,22 @@ body {
       align-items: center;
       flex-direction: row-reverse; }
       .header__icon--right__cart {
-        display: var(--dp-icon-bag); }
-      .header__icon--right__cart {
-        color: inherit; }
+        display: var(--dp-icon-bag);
+        color: inherit;
+        position: relative; }
+        .header__icon--right__cart::after {
+          content: attr(data-cart);
+          background-color: transparent;
+          border-radius: 4px;
+          position: absolute;
+          color: var(--cl-pink);
+          top: 4px;
+          right: 5px;
+          padding: 0 2px;
+          height: fit-content;
+          font-size: 15px;
+          display: block;
+          text-shadow: 0 0 7px #fc6c8f, 0 0 15px #ff2ced, 0 0 50px #ff0084; }
     .header__icon--left {
       visibility: var(--vsb-icon-left); }
   .header__logo {
@@ -402,7 +439,7 @@ body {
     .header__menu ul:first-child {
       display: flex;
       flex-direction: var(--fl-dr-menu);
-      justify-content: center;
+      justify-content: flex-start;
       list-style: none;
       background-color: var(--bg-ulmenu);
       width: var(--w-ulmenu);
@@ -968,7 +1005,7 @@ body {
     transform: scaleX(1); }
 
 .woocommerce table.shop_table {
-  border: 1px solid currentColor !important;
+  border: 1px solid var(--cl-border) !important;
   margin: 0 -1px 24px 0;
   text-align: left;
   width: 100%;
@@ -976,18 +1013,18 @@ body {
   border-radius: 5px; }
 
 .woocommerce table.shop_table td {
-  border-top: 1px solid currentColor !important;
+  border-top: 1px solid var(--cl-border) !important;
   padding: 9px 12px;
   vertical-align: middle;
   line-height: 1.5em; }
 
 .woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th {
   font-weight: 700;
-  border-top: 1px solid currentColor !important; }
+  border-top: 1px solid var(--cl-border) !important; }
 
-.product-thumbnail {
-  width: 150px;
-  height: 150px;
+.product-thumbnail a img {
+  width: 100px;
+  height: 100px;
   object-fit: cover; }
 
 .shop_table thead tr th {
@@ -997,23 +1034,39 @@ body {
   padding: 5px 0;
   margin-right: 20px; }
 
+.is-active {
+  color: var(--cl-pink);
+  text-shadow: 0 0 7px #fc6c8f, 0 0 15px #ff2ced, 0 0 50px #ff0084; }
+
 .my-account-page {
   display: grid;
   grid-template-columns: var(--grid-temp-cl-my-account-page);
   box-sizing: border-box;
   gap: 2%;
-  margin-top: var(--m-t-post); }
+  margin-top: var(--m-t-post);
+  box-sizing: border-box;
+  overflow: hidden; }
 
 .woocommerce-MyAccount-navigation {
-  display: flex;
-  flex-direction: var(--flex-direc-my-account-page);
   background-color: inherit; }
   .woocommerce-MyAccount-navigation ul {
-    list-style: none; }
+    display: flex;
+    flex-direction: var(--flex-direc-my-account-page);
+    list-style: none;
+    flex-wrap: wrap; }
     .woocommerce-MyAccount-navigation ul li {
-      padding: 10px 0; }
+      padding: var(--p-nav-item-my-account);
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      border-radius: 10px; }
       .woocommerce-MyAccount-navigation ul li a {
         color: inherit;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         text-decoration: none;
         position: relative; }
         .woocommerce-MyAccount-navigation ul li a::before {
@@ -1030,5 +1083,71 @@ body {
           transition: transform 0.3s ease; }
         .woocommerce-MyAccount-navigation ul li a:hover::before {
           transform: scaleX(1); }
+        .woocommerce-MyAccount-navigation ul li a ion-icon {
+          font-size: var(--fz-icon-nav-my-account);
+          display: var(--display-icon-nav-my-account); }
+        .woocommerce-MyAccount-navigation ul li a span {
+          display: var(--display-text-nav-my-account); }
+
+.woocommerce-orders-table__cell-order-number a {
+  color: inherit; }
+
+.woocommerce-customer-details address {
+  border: 1px solid var(--cl-border) !important; }
+
+.woocommerce-info {
+  border-top-color: var(--cl-pink) !important;
+  background-color: inherit !important;
+  color: inherit !important; }
+
+.woocommerce-Address header {
+  border-bottom: 1px dotted currentColor; }
+  .woocommerce-Address header h3 {
+    font-weight: 600; }
+  .woocommerce-Address header a {
+    color: inherit; }
+
+.woocommerce-Address {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  margin-top: 20px; }
+
+.select2-dropdown--above {
+  background-color: var(--bg-secondary) !important;
+  color: var(--cl-text-secondary) !important; }
+
+.select2-container--default .select2-selection--single .select2-selection__rendered, .select2-container--default .select2-selection--single .select2-selection__arrow {
+  color: var(--cl-text-secondary) !important;
+  background-color: var(--bg-secondary); }
+
+.select2-results__option[aria-selected], .select2-results__option[data-selected] {
+  background-color: inherit; }
+
+.select2-container {
+  background-color: inherit; }
+
+.select2-container--default .select2-results__option[aria-selected=true], .select2-container--default .select2-results__option[data-selected=true] {
+  background-color: inherit !important;
+  color: var(--cl-pink); }
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+  background-color: inherit !important; }
+
+.select2-container--default .select2-selection--single {
+  overflow: hidden;
+  position: relative; }
+
+.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected] {
+  border: 1px solid var(--cl-pink);
+  color: var(--cl-pink); }
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  line-height: inherit !important; }
+
+.woocommerce-MyAccount-content form fieldset {
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=app.css.map */

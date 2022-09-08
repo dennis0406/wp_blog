@@ -194,4 +194,16 @@ if (!function_exists('display_pagination')) {
 					}
 			}
 			add_action( 'pre_get_posts', 'wpa82763_custom_type_in_categories' );
+			
+			// Function to get quantity of product in cart.
+			function get_cart_quantity(){
+				global $woocommerce;
+				$items = $woocommerce->cart->get_cart();
+				$cart_quantity = 0;
+				foreach($items as $item => $values) { 
+						$cart_quantity += $values['quantity'];
+				} 
+				
+				return $cart_quantity; 
+			}							
 							?>

@@ -115,3 +115,17 @@ body {
         @include animate_underline_hover_before;
     }
 }
+
+input[type=text], input[type=tel], input[type=email], input[type=password], textarea{
+    border: 1px solid var(--cl-border);
+    background-color: inherit;
+    color: currentColor;
+    border-radius: 4px;
+    padding-left: 10px;
+
+}
+
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus{
+    border-color: var(--cl-pink) ;
+}
+

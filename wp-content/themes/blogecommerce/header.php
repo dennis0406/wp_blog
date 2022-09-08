@@ -19,7 +19,7 @@
             <?php display_logo('header__logo'); ?>
             <div class="header__icon--right header__icon">
                 <ion-icon onclick="searchBtn()" name="search-outline"></ion-icon>
-                <a href="/cart" class="header__icon--right__cart"><ion-icon name="bag-outline"></ion-icon></a>
+                <a href="/cart" data-cart="<?php echo get_cart_quantity(); ?>" class="header__icon--right__cart"><ion-icon name="bag-outline"></ion-icon></a>
                 <span id="switch__icon">
                     <ion-icon name="moon-outline" onclick="dark_mode()" title="Turn on dark mode"></ion-icon>
                 </span>
