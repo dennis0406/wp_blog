@@ -37,19 +37,19 @@
                 </div>
             </div>
             <div class="footer--right">
-                <a href="#reference" class="footer--right__item">
+                <a style="--bg-icon: #3b5998" href="#reference" class="footer--right__item">
                     <ion-icon name="logo-facebook"></ion-icon>
                     <span>13</span>
                 </a>
-                <a href="#reference" class="footer--right__item">
+                <a style="--bg-icon: #00aced" href="#reference" class="footer--right__item">
                     <ion-icon name="logo-twitter"></ion-icon>
                     <span>69K</span>
                 </a>
-                <a href="#reference" class="footer--right__item">
+                <a style="--bg-icon: #675144" href="#reference" class="footer--right__item">
                     <ion-icon name="logo-instagram"></ion-icon>
                     <span>44</span>
                 </a>
-                <a href="#reference" class="footer--right__item">
+                <a style="--bg-icon: #cb2027" href="#reference" class="footer--right__item">
                     <ion-icon name="logo-pinterest"></ion-icon>
                     <span>12K</span>
                 </a>

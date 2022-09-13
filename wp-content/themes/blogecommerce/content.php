@@ -1,4 +1,5 @@
-<?php if (basename(get_permalink()) == 'checkout' || basename(get_permalink()) == 'cart' || basename(get_permalink()) == 'my-account') {
+<?php
+if (basename(get_permalink()) == 'checkout' || basename(get_permalink()) == 'cart' || basename(get_permalink()) == 'my-account' || str_contains(str_replace(home_url(),'',get_permalink()),'/product/')) {
 	the_content();
 }else{
 	?>

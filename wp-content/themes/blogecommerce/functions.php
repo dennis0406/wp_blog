@@ -1,4 +1,79 @@
 <?php
+// Create the custom post type - banner
+function create_post_type_banner() {
+	$labels = array(
+			'name' => __( 'Banners' ),
+			'singular_name' => __( 'banner' ),
+			'add_new' => __( 'New banner' ),
+			'add_new_item' => __( 'Add New banner' ),
+			'edit_item' => __( 'Edit banner' ),
+			'new_item' => __( 'New banner' ),
+			'view_item' => __( 'View banner' ),
+			'search_items' => __( 'Search banners' ),
+			'not_found' =>  __( 'No banners Found' ),
+			'not_found_in_trash' => __( 'No banners found in Trash' ),
+	);
+	$args = array(
+			'labels' => $labels,
+			'has_archive' => true,
+			'public' => true,
+			'hierarchical' => false,
+			'supports' => array(
+					'title',
+					'editor',
+					'excerpt',
+					'custom-fields',
+					'thumbnail',
+					'page-attributes'
+			),
+			'taxonomies' => array( 'post_tag', 'category'),
+	);
+	register_post_type( 'banner', $args );
+}
+add_action( 'init', 'create_post_type_banner' );
+
+
+// function to show home page banner using query of banner post type
+function wptutsplus_home_page_banner() {
+ 
+	// start by setting up the query
+	$query = new WP_Query( array(
+			'post_type' => 'banner',
+			'post_status' => 'publish',
+  		// 'posts_per_page' => 1,
+	));
+
+	// now check if the query has posts and if so, output their content in a banner-box div
+	if ( $query->have_posts() ) { $count_post = 0; ?>
+			<section class="banner ">
+					<?php while ( $query->have_posts() ) : $query->the_post(); $count_post +=1; ?>
+					<div class="banner__item fade" >
+						<?php display_thumbnail('image', false, 'banner__item__image'); ?>
+						<a href="<?php echo get_category_link(wp_get_post_terms( get_the_ID(), 'category' )[0]->term_id); ?>" class="banner__item__category">
+          <?php echo(wp_get_post_terms( get_the_ID(), 'category' )[0]->name); ?>
+        </a>
+						
+						<div class="banner__item--bottom">
+							<a class="banner__item--bottom__title animate_underline" href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+							<p class="banner__item--bottom__excerpt"><?php echo get_post(get_the_ID())->post_excerpt; ?></p>
+							<a href="<?php echo the_permalink(); ?>" class="banner__item--bottom__btn btn">See more</a>
+						</div>
+					</div>
+					<?php endwhile; ?>
+			</section>
+			<br>
+
+<div style="text-align:center">
+  <?php for($i = 0; $i < $count_post; $i+=1){
+		echo '<span class="dot" onclick="currentSlide('.($i).')"></span> ';
+	} ?>
+</div>
+	<?php }
+	wp_reset_postdata();
+
+}
+
+
 if (!function_exists('base_setup_theme')) {
 	function base_setup_theme()
 	{

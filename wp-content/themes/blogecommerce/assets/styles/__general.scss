@@ -52,6 +52,16 @@ body {
     cursor: pointer;
 }
 
+.button{
+    color: var(--cl-text-secondary) !important;
+    background-color: var(--bg-secondary) !important;
+    padding: var(--p-btn);
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
 .title__section {
     width: fit-content;
     margin: 0 auto;
@@ -129,3 +139,12 @@ input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[ty
     border-color: var(--cl-pink) ;
 }
 
+
+.underline{
+    text-decoration: underline;
+    color: inherit;
+}
+
+a{
+    color: inherit;
+}

@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $allowed_html = array(
 	'a' => array(
 		'href' => array(),
+		'class'=> array(),
 	),
 );
 ?>
@@ -32,7 +33,7 @@ $allowed_html = array(
 	<?php
 	printf(
 		/* translators: 1: user display name 2: logout url */
-		wp_kses( __( 'Hello %1$s (not %1$s? <a class="animate_underline" href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
+		wp_kses( __( 'Hello %1$s (not %1$s? <a class="underline" href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
 		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
 		esc_url( wc_logout_url() )
 	);
@@ -42,10 +43,10 @@ $allowed_html = array(
 <p>
 	<?php
 	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-	$dashboard_desc = __( 'From your what men account dashboard you can view your <a class="animate_underline" href="%1$s">recent orders</a>, manage your <a class="animate_underline" href="%2$s">billing address</a>, and <a class="animate_underline" href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+	$dashboard_desc = __( 'From your what men account dashboard you can view your <a class="underline" href="%1$s">recent orders</a>, manage your <a class="underline" href="%2$s">billing address</a>, and <a class="underline" href="%3$s">edit your password and account details</a>.', 'woocommerce' );
 	if ( wc_shipping_enabled() ) {
 		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-		$dashboard_desc = __( 'From your account dashboard you can view your <a class="animate_underline" href="%1$s">recent orders</a>, manage your <a class="animate_underline" href="%2$s">shipping and billing addresses</a>, and <a class=animate_underline" href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+		$dashboard_desc = __( 'From your account dashboard you can view your <a class="underline" href="%1$s">recent orders</a>, manage your <a class="underline" href="%2$s">shipping and billing addresses</a>, and <a class=underline" href="%3$s">edit your password and account details</a>.', 'woocommerce' );
 	}
 	printf(
 		wp_kses( $dashboard_desc, $allowed_html ),

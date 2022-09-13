@@ -73,7 +73,7 @@
             @include animate_underline;
 
             &::before {
-                @include animate_underline_before(currentColor);
+                @include animate_underline_before(var(--bg-icon));
             }
 
             &:hover::before {

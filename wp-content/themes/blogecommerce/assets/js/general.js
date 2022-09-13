@@ -50,8 +50,31 @@ function searchBtn() {
   document.getElementById("search_global").classList.toggle('search__open')
 }
 
-var shipping_calculator_button = document.getElementsByClassName('shipping-calculator-button')[0];
-if(shipping_calculator_button){
-  shipping_calculator_button.classList.add('btn');
-  // shipping_calculator_button.classList.add('animate_underline');
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("banner__item");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active_slide", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active_slide";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+

@@ -1,0 +1,35 @@
+.woocommerce-message{
+  border-top-color: var(--cl-pink) !important;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message{
+  background-color: inherit !important;
+  color: inherit !important;
+}
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
+  float: none !important;
+  width: unset !important;
+  margin-left: 10px;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger,.woocommerce span.onsale{
+  z-index: 2 !important;
+}
+
+.woocommerce-loop-product__link{
+  color: inherit ;
+  @include animate_underline;
+  &::before {
+    @include animate_underline_before(currentColor);
+  }
+  &:hover::before {
+   @include animate_underline_hover_before;
+  }
+}
+
+// Alittle about single at post
+.single__post .post__item__content__meta{
+  margin-bottom: 20px;
+}
+.single__post .post__item__content__title, .single__post .post__item__content__meta{
+  width: 100%;
+  text-align: center;
+}

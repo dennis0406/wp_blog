@@ -24,10 +24,10 @@
                     <ion-icon name="moon-outline" onclick="dark_mode()" title="Turn on dark mode"></ion-icon>
                 </span>
             </div>
-            <form action="" method="GET" class="search--global" id="search_global">
+            <form action="<?php echo home_url(); ?>" method="GET" class="search--global" id="search_global" role="search">
                 <div class="search--global__group__input">
                     <ion-icon class="search--global__group__input__icon" name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Search..." name="s" class="search--global__group__input__field">
+                    <input type="text" placeholder="Search..." name="s" value="<?php echo get_search_query(); ?>" class="search--global__group__input__field">
                 </div>
                 <input type="submit" class="search--global__button" value="Search"/>
             </form>

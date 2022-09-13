@@ -22,11 +22,9 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class('product__item'); ?>>
           <?php display_thumbnail('', false, 'product__item__image'); ?>
           <div class="product__item__content">
-            <div class="product__item__content__category">
-              <?php // todo: Get the category of the product
-              echo (wp_get_post_terms(get_the_ID(), 'product_cat')[0]->name);
-              ?>
-            </div>
+          <a href="<?php echo get_category_link(wp_get_post_terms( get_the_ID(), 'product_cat' )[0]->term_id); ?>" class="product__item__content__category">
+          <?php echo(wp_get_post_terms( get_the_ID(), 'product_cat' )[0]->name); ?>
+        </a>
             <?php display_entry_header('product__item__content__title'); ?>
             <p class="product__item__content__desc"><?php echo $desc ?></p>
             <div class="product__item__content__price">

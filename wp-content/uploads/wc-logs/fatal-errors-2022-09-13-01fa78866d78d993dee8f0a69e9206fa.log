@@ -1,0 +1,189 @@
+2022-09-13T07:24:57+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:25:07+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:25:07+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:25:15+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:36:31+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:36:32+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:36:32+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:36:38+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:11+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:11+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:15+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:15+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:25+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:29+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
+2022-09-13T07:37:31+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/blogecommerce/functions.php:50
+Stack trace:
+#0 /var/www/html/wp-content/themes/blogecommerce/page-home.php(3): wptutsplus_home_page_banner()
+#1 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#2 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#3 /var/www/html/index.php(17): require('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/themes/blogecommerce/functions.php on line 50
+
