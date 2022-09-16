@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap'); // font for logo
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ubuntu+Mono&display=swap'); //Font for title and general text
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ubuntu+Mono&display=swap'); //Font for title 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap'); //Font for text
 
 :root{
-  --font-text: 'Ubuntu Mono', monospace;
+  --font-text: 'JetBrains Mono', monospace;
   --font-title: 'Rubik Mono One', sans-serif;
   --bg-primary: #e8e8e8;
   --cl-border: #d3ced2;
@@ -67,7 +68,8 @@
     --ps-ul: relative;
   };
   
-  //Banner
+  //Banner what you know about rolling down in the deep when your brain goes numb, you can call that mental freeze when these people talktoo= 
+  
   --line-height-banner: 0.8;
   --size-dot-banner: 8px;
   @include respond(tab-land){

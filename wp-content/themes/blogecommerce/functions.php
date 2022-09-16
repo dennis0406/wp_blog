@@ -40,18 +40,14 @@ function wptutsplus_home_page_banner() {
 	$query = new WP_Query( array(
 			'post_type' => 'banner',
 			'post_status' => 'publish',
-  		// 'posts_per_page' => 1,
+  		// 'posts_per_page' => 5,
 	));
 
-	// now check if the query has posts and if so, output their content in a banner-box div
 	if ( $query->have_posts() ) { $count_post = 0; ?>
 			<section class="banner ">
 					<?php while ( $query->have_posts() ) : $query->the_post(); $count_post +=1; ?>
 					<div class="banner__item fade" >
 						<?php display_thumbnail('image', false, 'banner__item__image'); ?>
-						<a href="<?php echo get_category_link(wp_get_post_terms( get_the_ID(), 'category' )[0]->term_id); ?>" class="banner__item__category">
-          <?php echo(wp_get_post_terms( get_the_ID(), 'category' )[0]->name); ?>
-        </a>
 						
 						<div class="banner__item--bottom">
 							<a class="banner__item--bottom__title animate_underline" href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>

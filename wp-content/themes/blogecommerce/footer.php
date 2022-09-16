@@ -28,11 +28,17 @@
                 <div class="footer--middle__category">
                     <?php
                     $categories = get_categories('orderby=name&show_count=1');
+                    $categories_prd = get_terms( ['taxonomy' => 'product_cat'] );
                     if ($categories) {
                         foreach ($categories as $category) {
                             echo '<a  class="footer--middle__category__item" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
                         }
                     }
+                    if ($categories_prd) {
+                        foreach ($categories_prd as $category) {
+                            echo '<a  class="footer--middle__category__item" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+                        }
+                      }
                     ?>
                 </div>
             </div>

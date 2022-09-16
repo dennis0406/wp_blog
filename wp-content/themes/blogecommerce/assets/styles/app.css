@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Ubuntu+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 *,
 *::before,
 *::after {
@@ -48,7 +49,7 @@ h6 {
 *   }
 **/
 :root {
-  --font-text: 'Ubuntu Mono', monospace;
+  --font-text: 'JetBrains Mono', monospace;
   --font-title: 'Rubik Mono One', sans-serif;
   --bg-primary: #e8e8e8;
   --cl-border: #d3ced2;
@@ -328,7 +329,8 @@ body {
   color: inherit; }
 
 .price {
-  font-weight: 600; }
+  font-weight: 600;
+  color: red; }
 
 .price::before {
   content: "\24";
@@ -379,6 +381,10 @@ input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[ty
 a {
   color: inherit; }
 
+.switch__dark-mode--button {
+  background-color: var(--bg-primary) !important;
+  color: var(--cl-text-primary) !important; }
+
 .header {
   display: flex;
   width: 100%;
@@ -404,16 +410,17 @@ a {
         position: relative; }
         .header__icon--right__cart::after {
           content: attr(data-cart);
-          background-color: transparent;
-          border-radius: 4px;
+          background-color: red;
+          border-radius: 50%;
           position: absolute;
-          color: var(--cl-pink);
-          top: 4px;
-          right: 4.5px;
+          color: var(--cl-text-secondary);
+          top: -11%;
+          right: -18%;
           padding: 0 2px;
           height: fit-content;
-          font-size: 15px;
+          font-size: 12px;
           display: block;
+          font-weight: bold;
           text-shadow: 0 0 7px #fc6c8f, 0 0 15px #ff2ced, 0 0 50px #ff0084; }
     .header__icon--left {
       visibility: var(--vsb-icon-left); }
@@ -1078,7 +1085,7 @@ a {
       align-items: center; }
 
 .search__container .woocommerce-message::before {
-  content: "\21";
+  content: "\e016";
   color: #f10505; }
 
 .search__container {
@@ -1235,7 +1242,7 @@ a {
 .woocommerce-Address {
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid currentColor;
+  border: 1px solid var(--cl-border);
   margin-top: 20px; }
 
 .select2-dropdown--above {

@@ -98,6 +98,7 @@ body {
 
 .price{
     font-weight: 600;
+    color: red;
 }
 .price::before{
     content: "\24";
@@ -147,4 +148,9 @@ input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus, input[ty
 
 a{
     color: inherit;
+}
+
+.switch__dark-mode--button{
+    background-color: var(--bg-primary) !important;
+    color: var(--cl-text-primary) !important;
 }

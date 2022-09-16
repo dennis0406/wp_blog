@@ -115,6 +115,43 @@
             <?php } ?>
           </div>
         </div>
+        <!-- Search banner -->
+        <div class="search__banner">
+          <h2 class="search__banner__titile title__section">events</h2>
+          <div class="search__banner__content">
+            <?php
+            if ( $the_query->have_posts() ) { $count_post = 0; ?>
+              <section class="banner ">
+                  <?php while ( $the_query->have_posts()  ) : $the_query->the_post(); 
+                  if ('banner' == get_post_type()) {
+                    $check = true;
+                    $count_post +=1;  ?>
+                  <div class="banner__item fade" >
+                    <?php display_thumbnail('image', false, 'banner__item__image'); ?>
+                    
+                    <div class="banner__item--bottom">
+                      <a class="banner__item--bottom__title animate_underline" href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
+                      <p class="banner__item--bottom__excerpt"><?php echo get_post(get_the_ID())->post_excerpt; ?></p>
+                      <a href="<?php echo the_permalink(); ?>" class="banner__item--bottom__btn btn">See more</a>
+                    </div>
+                  </div>
+                  <?php } endwhile; ?>
+              </section>
+              <br>
+        
+        <div style="text-align:center">
+          <?php for($i = 0; $i < $count_post; $i+=1){
+            echo '<span class="dot" onclick="currentSlide('.($i).')"></span> ';
+          } ?>
+        </div>
+          <?php }
+            if (!$check) { ?>
+              <div class="woocommerce-notices-wrapper">
+                <div class="woocommerce-message" role="alert">No page available</div>
+              </div>
+            <?php } ?>
+          </div>
+        </div>
       <?php
       } else {
       ?>

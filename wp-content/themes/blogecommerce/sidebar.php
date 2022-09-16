@@ -47,11 +47,18 @@
   <div class="sidebar__taxonomy">
     <?php
     $tags = get_tags('');
+    $prd_tags = get_terms( ['taxonomy' => 'product_tag'] );
 
     if ($tags) {
-      foreach ($tags as $category) {
-        echo '<a  class="sidebar__taxonomy__item" href="' . get_category_link($category->term_id) . '">' . '<span class="sidebar__taxonomy__item--name">' . $category->name . '</span>' . '<span class="sidebar__taxonomy__item--count">' . $category->count . '</span>' . '</a>';
+      foreach ($tags as $tag) {
+        echo '<a  class="sidebar__taxonomy__item" href="' . get_category_link($tag->term_id) . '">' . '<span class="sidebar__taxonomy__item--name">' . $tag->name . '</span>' . '<span class="sidebar__taxonomy__item--count">' . $tag->count . '</span>' . '</a>';
       }
-    } ?>
+    }
+    if ($prd_tags) {
+      foreach ($prd_tags as $prd_tag) {
+        echo '<a  class="sidebar__taxonomy__item" href="' . get_category_link($prd_tag->term_id) . '">' . '<span class="sidebar__taxonomy__item--name">' . $prd_tag->name . '</span>' . '<span class="sidebar__taxonomy__item--count">' . $prd_tag->count . '</span>' . '</a>';
+      }
+    }
+     ?>
   </div>
 </aside>
